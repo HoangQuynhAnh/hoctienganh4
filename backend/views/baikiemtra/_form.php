@@ -1,0 +1,36 @@
+<?php
+
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
+/* @var $this yii\web\View */
+/* @var $model backend\models\Baikiemtra */
+/* @var $form yii\widgets\ActiveForm */
+?>
+
+<div class="baikiemtra-form">
+
+    <?php $form = ActiveForm::begin(); ?>
+
+    <?= $form->field($model, 'ten')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'loai')->dropDownList(
+        [
+            '1'=>'Hằng Tuần',
+            '2'=>'Cuôi mỗi kỳ',
+        ],
+    )?>
+
+    <div class="form-group">
+        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+    </div>
+
+    <?php ActiveForm::end(); ?>
+
+</div>
+<style>
+	#baikiemtra-ten,#baikiemtra-loai,.btn.btn-success{
+		font-size: 16px;
+		height: 30px
+	}
+</style>
